@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.26.0"
+    }
+  }
+}
+
 resource "aws_iam_user" "read_write_upload" {
   name = var.user_a_name
 
