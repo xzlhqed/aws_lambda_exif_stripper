@@ -7,6 +7,8 @@ Includes the following terraform modules
 - `lambda`    - creates lambda function with required permissions from the `stripper.py` script in `src` directory, as well as an event trigger so that the   lambda is executed whenever an image is uploaded to the bucket created in `s3_upload`
 - `iam_users` - creates iam users as referred to in the brief as `A` and `B`; `A` with r/w access to `s3_upload` bucket and `B` with ro access   to     `s3_target` bucket
 
+`stripper.py` contains the handler for the lambda that will strip EXIF data from uploaded images.
+
 To build, configure aws cli then run `terraform init` -> `terraform plan` -> `terraform apply` in the modules in the following order 
 - `s3_upload` + `s3_target`
 - `lambda`
