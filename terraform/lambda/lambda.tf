@@ -72,7 +72,7 @@ resource "aws_s3_bucket_notification" "upload" {
   lambda_function {
     lambda_function_arn = aws_lambda_function.strip_exif_lambda.arn
     events = ["s3:ObjectCreated:*"]
-    # filter_suffix = ".jpg"
+    filter_suffix = ".jpg"
   }
 
   depends_on = [aws_lambda_permission.s3_trigger]
