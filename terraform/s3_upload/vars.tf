@@ -5,5 +5,5 @@ variable "bucket_name" {
 
 variable "bucket_alias" {
   type = string
-  default = "upload"
+  default = "bucket A"
 }
